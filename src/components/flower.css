@@ -7,6 +7,11 @@
     animation: clockwise 6s ease-out;
 }
 
+.highlight{
+    color: blue;
+    font-weight: bold;
+}
+
 @-moz-keyframes clockwise {
     0% {
         -moz-transform: rotate(0deg);

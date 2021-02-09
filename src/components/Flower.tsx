@@ -76,13 +76,6 @@ export const Flower = (props: {
     const [done, setDone] = React.useState(false);
 
     React.useEffect(() => {
-        if (done) {
-            alert(`Chúc mừng ${user} đã quay trúng phần thưởng ${listRewards[finalRewardIndex]} VNĐ`);
-            setDone(false);
-        }
-    }, [done])
-
-    React.useEffect(() => {
         if (turningLevel === 0) {
             return;
         }
@@ -106,7 +99,7 @@ export const Flower = (props: {
                 }
                 setRewardString(listRewards[finalRewardIndex]);
                 setTurningLevel(0);
-                setDone(true);
+                setTimeout(() => setDone(true), 500);
             }
         }, turnTime);
         setTimeout(() => {
@@ -201,6 +194,15 @@ export const Flower = (props: {
 
     return (
         <>
+            {
+                done && <>
+                    <div onClick={() => setDone(false)}
+                         className={'absolute top-0 left-0 right-0 bottom-0 bg-black opacity-40 z-10'}/>
+                    <div className={'absolute w-full top-200 left-100 bg-red-500 z-20 p-3'}>
+                        <h1 className={'text-white text-2xl opacity-100 text-bold uppercase text-center'}>Chúc mừng <span className={'highlight italic'}>{user}</span> đã quay trúng phần thưởng <span className={'highlight italic'}>{listRewards[finalRewardIndex]} VNĐ</span></h1>
+                    </div>
+                </>
+            }
             <div className={'relative p-10 h-screen cursor-pointer overflow-x-hidden overflow-y-hidden'} onClick={play}>
                 {
                     !isLock && <div className="pyro">
