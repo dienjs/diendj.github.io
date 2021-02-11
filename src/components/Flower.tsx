@@ -18,7 +18,7 @@ export const Flower = (props: {
     }
 
     const REWARDS = [
-        '50.000', '100.000', '200.000', '100.000', '50.000', '100.000', '500.000', '2.021.000', '100.000', '200.000'
+        '50.000', '100.000', '200.000', '50.000', '200.000', '100.000', '500.000', '1.000.000', '100.000', '200.000'
     ]
 
     const randomRewardsIndex = (): string[] => {
@@ -27,11 +27,7 @@ export const Flower = (props: {
             '50.000',
             '50.000',
             '50.000',
-            '100.000',
-            '100.000',
-            '100.000',
-            '100.000',
-            '100.000',
+            '50.000',
             '100.000',
             '100.000',
             '100.000',
@@ -42,7 +38,11 @@ export const Flower = (props: {
             '200.000',
             '200.000',
             '200.000',
-            '500.000',
+            '200.000',
+            '200.000',
+            '200.000',
+            '200.000',
+            '200.000',
             '500.000',
             '500.000',
         ].sort(() => Math.random() - 0.5);
@@ -146,7 +146,7 @@ export const Flower = (props: {
     const calculateFinalReward = (currentListRewards: string[]) => {
         let rewardIndex = currentListRewards.findIndex((r) => r === initRewards[(startIndex + playCount) % 22]);
         if (user === group5[specialIndex]) {
-            rewardIndex = currentListRewards.findIndex((r) => r === '2.021.000');
+            rewardIndex = currentListRewards.findIndex((r) => r === '1.000.000');
         } else if (user === '...') {
             rewardIndex = Math.floor(Math.random() * 10);
         }

@@ -31,7 +31,7 @@ export const Piece = (props: {
 
     React.useEffect(() => {
         let specAnimation: any;
-        if(props.reward === '2.021.000'){
+        if(props.reward === '1.000.000'){
             let temp = true;
             specAnimation = setInterval(() => {
                 setClassNames(temp ? 'reward_red' : 'reward');
